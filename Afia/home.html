@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <title>Crafters' shelf - Home</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+   <style>
+      * {
+         margin: 0;
+         padding: 0;
+         box-sizing: border-box;
+         font-family: 'Arial', sans-serif;
+      }
+
+      body {
+         background: #f8f8f8;
+         color: #333;
+      }
+
+      header {
+         background: #2e7d32;
+         padding: 1rem 2rem;
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+         color: #fff;
+      }
+
+      header .logo a {
+         color: #fff;
+         font-size: 1.5rem;
+         text-decoration: none;
+         font-weight: bold;
+      }
+
+      header .navbar a {
+         margin-left: 1.5rem;
+         color: #fff;
+         text-decoration: none;
+         font-size: 1rem;
+      }
+
+      .home-bg {
+         background: url('images/banner.jpg') no-repeat center center/cover;
+         padding: 5rem 2rem;
+         text-align: center;
+         color: #fff;
+      }
+
+      .home-bg .content {
+         background-color: rgba(0, 0, 0, 0.5);
+         display: inline-block;
+         padding: 2rem;
+         border-radius: 10px;
+      }
+
+      .home-bg h3 {
+         font-size: 2rem;
+         margin: 1rem 0;
+      }
+
+      .home-bg .btn {
+         padding: 0.7rem 1.5rem;
+         background: #ff9800;
+         color: #fff;
+         text-decoration: none;
+         border-radius: 5px;
+         font-weight: bold;
+      }
+
+      .home-category, .products {
+         padding: 2rem;
+         text-align: center;
+      }
+
+      .title {
+         font-size: 2rem;
+         margin-bottom: 2rem;
+         color: #2e7d32;
+      }
+
+      .box-container {
+         display: grid;
+         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+         gap: 1.5rem;
+      }
+
+      .box {
+         background: #fff;
+         padding: 1rem;
+         border-radius: 10px;
+         box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+         text-align: center;
+      }
+
+      .box img {
+         width: 100%;
+         height: 180px;
+         object-fit: contain;
+         margin-bottom: 1rem;
+      }
+
+      .box h3 {
+         font-size: 1.2rem;
+         margin: 0.5rem 0;
+      }
+
+      .box p {
+         font-size: 0.9rem;
+         color: #555;
+         margin-bottom: 1rem;
+      }
+
+      .btn, .option-btn {
+         display: inline-block;
+         margin: 0.3rem;
+         padding: 0.6rem 1rem;
+         background: #2e7d32;
+         color: #fff;
+         border: none;
+         text-decoration: none;
+         border-radius: 5px;
+         cursor: pointer;
+      }
+
+      .option-btn {
+         background: #607d8b;
+      }
+
+      .qty {
+         width: 60px;
+         padding: 0.4rem;
+         margin-bottom: 0.5rem;
+         text-align: center;
+      }
+
+      .footer {
+         background: #333;
+         color: #fff;
+         text-align: center;
+         padding: 1rem;
+         margin-top: 2rem;
+      }
+
+      @media (max-width: 600px) {
+         .home-bg .content h3 {
+            font-size: 1.5rem;
+         }
+      }
+   </style>
+</head>
+<body>
+
+<header class="header">
+   <div class="logo"><a href="#">Crafter's shelf</a></div>
+   <nav class="navbar">
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Category</a>
+      <a href="#">Cart</a>
+   </nav>
+</header>
+
+<div class="home-bg">
+   <section class="home">
+      <div class="content">
+         <span>Crafted with Heart, Delivered with Care.</span>
+         <h3>Handmade is the New Luxury</h3>
+         <p>Buy Handmade. Support Dreams.</p>
+         <a href="#" class="btn">About Us</a>
+      </div>
+   </section>
+</div>
+
+<section class="home-category">
+   <h1 class="title">Shop by Category</h1>
+   <div class="box-container">
+      <div class="box">
+         <img src="saree.jpg" alt="saree">
+         <h3>saree</h3>
+         <p>A Saree Never Goes Out of Style.</p>
+         <a href="#" class="btn">saree</a>
+      </div>
+      <div class="box">
+         <img src="choker.webp" alt="jwellery">
+         <h3>jwellery</h3>
+         <p>Statement Jewelry for Soulful Women.</p>
+         <a href="#" class="btn">jwellery</a>
+      </div>
+      <div class="box">
+         <img src="bag.webp" alt="Bag">
+         <h3>Bag</h3>
+         <p>Your Bag, Your Personality.</p>
+         <a href="#" class="btn">Bag</a>
+      </div>
+      <div class="box">
+         <img src="pottery.jpg" alt="pottery">
+         <h3>pottery</h3>
+         <p>Made with Mud, Molded with Magic.</p>
+         <a href="#" class="btn">Pottery</a>
+      </div>
+   </div>
+</section>
+
+<section class="products">
+   <h1 class="title">Latest Products</h1>
+   <div class="box-container">
+      <div class="box">
+         <div class="price">Tk1000/-</div>
+         <a href="#" class="fas fa-eye"></a>
+         <img src="pure cotton-saree.webp" alt="Product">
+         <div class="name">pure cotton_saree</div>
+         <input type="number" min="1" value="1" class="qty">
+         <button class="option-btn">Add to Wishlist</button>
+         <button class="btn">Add to Cart</button>
+      </div>
+
+      <div class="box">
+         <div class="price">Tk550/-</div>
+         <a href="#" class="fas fa-eye"></a>
+         <img src="Bangles.jpg" alt="Product">
+         <div class="name">Bangle</div>
+         <input type="number" min="1" value="1" class="qty">
+         <button class="option-btn">Add to Wishlist</button>
+         <button class="btn">Add to Cart</button>
+      </div>
+
+      <div class="box">
+         <div class="price">Tk780/-</div>
+         <a href="#" class="fas fa-eye"></a>
+         <img src="ear ring.webp" alt="Product">
+         <div class="name">Ear ring</div>
+         <input type="number" min="1" value="1" class="qty">
+         <button class="option-btn">Add to Wishlist</button>
+         <button class="btn">Add to Cart</button>
+      </div>
+
+
+
+   </div>
+
+</section>
+
+<footer class="footer">
+   <p>&copy; 2025 Crafters' shelf. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
+
