@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Placed Orders</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+        }
+        .modal-overlay {
+            background-color: rgba(0, 0, 0, 0.6);
+        }
+        .modal-content {
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-4">
+
+    <div class="bg-white rounded-lg shadow-xl p-6 md:p-8 w-full max-w-4xl flex flex-col md:flex-row gap-6">
+
+        <div class="flex-1 p-4 bg-gray-50 rounded-md border border-gray-200">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">PLACED ORDERS</h2>
+            <div class="space-y-3 text-gray-700">
+                <p><span class="font-medium">Placed on:</span> July 14, 2025</p>
+                <p><span class="font-medium">Name:</span> John Doe</p>
+                <p><span class="font-medium">Number:</span> +1234567890</p>
+                <p><span class="font-medium">Email:</span> john.doe@example.com</p>
+                <p><span class="font-medium">Address:</span> 123 Main St, Anytown, USA</p>
+                <p><span class="font-medium">Payment Method:</span> Credit Card</p>
+                <p><span class="font-medium">Your Orders:</span> Product A, Product B</p>
+                <p><span class="font-medium">Total Price:</span> $150.00</p>
+                <p><span class="font-medium">Payment Status:</span> Paid</p>
+            </div>
+
+            <div class="mt-8 text-center">
+                <button id="cancelOrderBtn" class="bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-6 rounded-lg transition duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-red-500">
+                    Cancel Order
+                </button>
+            </div>
+        </div>
+
+        <div class="flex-1 p-4 bg-gray-50 rounded-md border border-gray-200 flex items-center justify-center">
+            <div class="text-center text-gray-600 font-medium">
+                No Orders Placed Yet!
+            </div>
+        </div>
+
+    </div>
+
+    <div id="cancelOrderModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-60 hidden modal-overlay">
+        <div class="bg-white rounded-xl p-8 max-w-md w-full modal-content transform transition-all duration-300 scale-95 opacity-0">
+            <h3 class="text-xl font-semibold text-gray-800 mb-6 text-center">Reason for Cancelling Order #<span id="orderNumberPlaceholder">12345</span></h3>
+
+            <div class="mb-4">
+                <label for="cancelReasonDropdown" class="block text-gray-700 text-sm font-medium mb-2">Select a reason:</label>
+                <select id="cancelReasonDropdown" class="block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                    <option value="">-- Choose a reason --</option>
+                    <option value="changed_mind">Changed my mind</option>
+                    <option value="ordered_wrong">Ordered wrong item/size/color</option>
+                    <option value="better_price">Found a better price elsewhere</option>
+                    <option value="delivery_too_long">Delivery time is too long</option>
+                    <option value="duplicate_order">Duplicate order</option>
+                    <option value="other">Other (please specify)</option>
+                </select>
+            </div>
+
+            <div class="mb-6" id="otherReasonContainer">
+                <label for="cancelReasonTextarea" class="block text-gray-700 text-sm font-medium mb-2">Please specify your reason:</label>
+                <textarea id="cancelReasonTextarea" rows="4" class="block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm resize-y" placeholder="Type your reason here..." disabled></textarea>
+            </div>
+
+            <div class="flex justify-end space-x-3">
+                <button id="sendToAdminBtn" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-5 rounded-md transition duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    Send To Admin
+                </button>
+                <button id="closeModalBtn" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold py-2 px-5 rounded-md transition duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-gray-500">
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const cancelOrderBtn = document.getElementById('cancelOrderBtn');
+        const cancelOrderModal = document.getElementById('cancelOrderModal');
+        const closeModalBtn = document.getElementById('closeModalBtn');
+        const sendToAdminBtn = document.getElementById('sendToAdminBtn');
+        const cancelReasonDropdown = document.getElementById('cancelReasonDropdown');
+        const cancelReasonTextarea = document.getElementById('cancelReasonTextarea');
+        const orderNumberPlaceholder = document.getElementById('orderNumberPlaceholder');
+
+        function showModal() {
+            cancelOrderModal.classList.remove('hidden');
+            setTimeout(() => {
+                cancelOrderModal.querySelector('.modal-content').classList.remove('scale-95', 'opacity-0');
+                cancelOrderModal.querySelector('.modal-content').classList.add('scale-100', 'opacity-100');
+            }, 10);
+        }
+
+        function hideModal() {
+            cancelOrderModal.querySelector('.modal-content').classList.remove('scale-100', 'opacity-100');
+            cancelOrderModal.querySelector('.modal-content').classList.add('scale-95', 'opacity-0');
+            setTimeout(() => {
+                cancelOrderModal.classList.add('hidden');
+                cancelReasonDropdown.value = '';
+                cancelReasonTextarea.value = '';
+                cancelReasonTextarea.disabled = true;
+            }, 300);
+        }
+
+        cancelOrderBtn.addEventListener('click', () => {
+            orderNumberPlaceholder.textContent = 'XYZ789';
+            showModal();
+        });
+
+        closeModalBtn.addEventListener('click', hideModal);
+
+        cancelOrderModal.addEventListener('click', (e) => {
+            if (e.target === cancelOrderModal) hideModal();
+        });
+
+        cancelReasonDropdown.addEventListener('change', () => {
+            const isOther = cancelReasonDropdown.value === 'other';
+            cancelReasonTextarea.disabled = !isOther;
+            if (isOther) cancelReasonTextarea.focus();
+            else cancelReasonTextarea.value = '';
+        });
+
+        sendToAdminBtn.addEventListener('click', () => {
+            const selectedReason = cancelReasonDropdown.value;
+            const customReason = cancelReasonTextarea.value.trim();
+            let reasonText = '';
+
+            if (!selectedReason) return alert('Please select a reason.');
+            if (selectedReason === 'other' && !customReason) return alert('Please specify your reason.');
+
+            reasonText = selectedReason === 'other' ? customReason : cancelReasonDropdown.options[cancelReasonDropdown.selectedIndex].text;
+
+            sendCancellationEmail(orderNumberPlaceholder.textContent, reasonText)
+                .then(() => {
+                    alert('Cancellation request sent!');
+                    hideModal();
+                })
+                .catch(() => {
+                    alert('Failed to send request. Please try again.');
+                });
+        });
+
+        async function sendCancellationEmail(orderId, reason) {
+            return new Promise(resolve => setTimeout(resolve, 1500));
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            cancelReasonTextarea.disabled = true;
+        });
+    </script>
+</body>
+</html>

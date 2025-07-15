@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>shopping cart</title>
+
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+   <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+   
+<section class="shopping-cart">
+
+   <h1 class="title">products added</h1>
+
+   <div class="box-container">
+
+   <form action="" method="POST" class="box">
+      <a href="cart.php?delete=[ITEM_ID]" class="fas fa-times" onclick="return confirm('delete this from cart?');"></a>
+      <a href="view_page.php?pid=[PRODUCT_ID]" class="fas fa-eye"></a>
+      <img src="img/OIP.jpeg" alt="Tote Bag">
+      
+      <div class="name">tote bag</div>      
+      <div class="price">400/-</div>
+      
+      <div class="details">Hand made bag. length: 13 inch</div>
+      
+      <div class="stock">Available: <span>9</span></div>
+      
+      <input type="hidden" name="cart_id" value="[CART_ITEM_ID]">
+      <div class="flex-btn">
+         <input type="number" min="1" value="[PRODUCT_QUANTITY_IN_CART]" class="qty" name="p_qty" max="9"> 
+         <input type="submit" value="update" name="update_qty" class="option-btn">
+      </div>
+      <div class="sub-total"> sub total : 400/-</span> </div>
+   </form>
+
+
+   </div>
+
+   <div class="cart-total">
+      <p>grand total : <span>400 tk/-</span></p>
+      <a href="shop.php" class="option-btn">continue shopping</a>
+      <a href="cart.php?delete_all" class="delete-btn [DISABLE_CLASS_IF_CART_EMPTY]">delete all</a>
+      <a href="checkout.php" class="btn [DISABLE_CLASS_IF_CART_EMPTY]">proceed to checkout</a>
+   </div>
+
+</section>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>

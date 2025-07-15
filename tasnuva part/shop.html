@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Shop</title>
+
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+   <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+   
+<section class="p-category">
+   <a href="category.php?category=saree">Saree</a>
+   <a href="category.php?category=jewellery">Jewellery</a>
+   <a href="category.php?category=bag">Bag</a>
+   <a href="category.php?category=pottery">Pottery</a>
+</section>
+
+<section class="products">
+
+   <h1 class="title">Latest Products</h1> 
+
+   <div class="box-container">
+
+   <form action="" class="box" method="POST">
+      <div class="price">
+         <span>350 tk</span>/- 
+      </div>
+      <a href="view_page.php?pid=[PRODUCT_ID]" class="fas fa-eye"></a>
+      <img src="img/OIP.jpeg" alt="[PRODUCT_NAME]">
+      
+      <div class="name">tote bag </div>
+      <div class="details">Hand made bag. length: 13 inch</div>
+      
+      <div class="stock">Available: <span>9</span></div>
+      
+      <input type="hidden" name="pid" value="[PRODUCT_ID]">
+      <input type="hidden" name="p_name" value="[PRODUCT_NAME]">
+      <input type="hidden" name="p_price" value="[PRODUCT_PRICE]">
+      <input type="hidden" name="p_image" value="[PRODUCT_IMAGE_FILENAME]">
+      <input type="hidden" name="p_stock" value="[AVAILABLE_STOCK_QUANTITY]"> 
+
+      <input type="number" min="1" value="1" name="p_qty" class="qty" max="[AVAILABLE_STOCK_QUANTITY]">
+      
+      <input type="submit" value="add to wishlist" class="option-btn" name="add_to_wishlist">
+      <input type="submit" value="add to cart" class="btn" name="add_to_cart">
+   </form>
+
+   </div>
+
+</section>
+
+
+</body>
+</html>

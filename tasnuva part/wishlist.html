@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Wishlist</title>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+   <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<section class="wishlist">
+   <h1 class="title">Products Added</h1>
+
+   <div class="box-container">
+ 
+         <form method="POST" class="box">
+            <a href="" class="fas fa-times" onclick="return confirm('Delete this from wishlist?');"></a>
+            <a href="" class="fas fa-eye"></a>
+            <img src="img/OIP.jpeg" alt="Tote Bag">
+            
+            <div class="name">Tote Bag</div>
+            
+            <div class="price">350 tk/-</div>
+            
+            <div class="details">Hand made bag. length: 13 inch</div>
+            
+            <div class="stock">Available: <span>10</span></div>
+            <input type="number" min="1" value="1" class="qty" name="p_qty" max="[AVAILABLE_STOCK_QUANTITY]">
+            <input type="hidden" name="pid" value="">
+            <input type="hidden" name="p_name" value="">
+            <input type="hidden" name="p_price" value="">
+            <input type="hidden" name="p_image" value="">
+            <input type="hidden" name="p_stock" value="[AVAILABLE_STOCK_QUANTITY]"> 
+            
+            <input type="submit" value="Add to Cart" name="add_to_cart" class="btn">
+         </form>
+ 
+      <p class="empty">Your wishlist is empty.</p>
+ 
+   </div>
+
+   <div class="wishlist-total">
+      <p>Grand Total:350 tk/-</span></p>
+      <a href="shop.php" class="option-btn">Continue Shopping</a>
+      <a href="wishlist.php?delete_all" class="delete-btn ">Delete All</a>
+   </div>
+</section>
+
+</body>
+</html>
