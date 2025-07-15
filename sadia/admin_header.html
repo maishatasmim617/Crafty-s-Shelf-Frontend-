@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <title>Admin Panel</title>
+
+   <!-- Link to your CSS -->
+   <link rel="stylesheet" href="css/style.css" />
+
+   <!-- Font Awesome for icons -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+   <!-- Google Fonts -->
+   <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- ===== HEADER START ===== -->
+<header class="header">
+   <div class="flex">
+      <a href="admin_page.php" class="logo">Admin<span>Panel</span></a>
+
+      <nav class="navbar">
+         <a href="admin_page.php">home</a>
+         <a href="shop.php">shop</a>
+         <a href="admin_orders.php">orders</a>
+         <a href="about.php">about</a>
+         <a href="contact.php">contact</a>
+      </nav>
+
+      <div class="icons">
+         <div id="menu-btn" class="fas fa-bars"></div>
+         <div id="user-btn" class="fas fa-user"></div>
+      </div>
+
+      <div class="profile">
+         <img src="images/profile.jpeg" alt="Profile Image" />
+         <p>Admin Name</p>
+         <!-- Updated update profile link -->
+         <a href="admin_update_profile.html" class="btn" target="_blank" rel="noopener noreferrer">update profile</a>
+         <a href="logout.php" class="delete-btn">logout</a>
+         <div class="flex-btn">
+            <a href="login.php" class="option-btn">login</a>
+            <a href="register.php" class="option-btn">register</a>
+         </div>
+      </div>
+   </div>
+</header>
+<!-- ===== HEADER END ===== -->
+
+
+<!-- ===== SPACER SECTION ===== -->
+<section style="height: 5rem;"></section>
+
+
+<!-- ===== FOOTER START ===== -->
+<footer class="footer">
+   <div class="box-container" style="max-width: 1200px; margin: 0 auto; padding: 0 2rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr)); gap: 2rem;">
+
+      <div class="box">
+         <h3>quick links</h3>
+         <a href="admin_page.php"><i class="fas fa-angle-right"></i> home</a>
+         <a href="shop.php"><i class="fas fa-angle-right"></i> shop</a>
+         <a href="admin_orders.php"><i class="fas fa-angle-right"></i> orders</a>
+         <a href="about.php"><i class="fas fa-angle-right"></i> about</a>
+         <a href="contact.php"><i class="fas fa-angle-right"></i> contact</a>
+      </div>
+
+      <div class="box">
+         <h3>extra links</h3>
+         <a href="#"><i class="fas fa-angle-right"></i> privacy policy</a>
+         <a href="#"><i class="fas fa-angle-right"></i> terms of use</a>
+         <a href="#"><i class="fas fa-angle-right"></i> FAQs</a>
+         <a href="#"><i class="fas fa-angle-right"></i> help center</a>
+      </div>
+
+      <div class="box">
+         <h3>contact info</h3>
+         <p><i class="fas fa-phone"></i> +123-456-7890</p>
+         <p><i class="fas fa-envelope"></i> admin@example.com</p>
+         <p><i class="fas fa-map-marker-alt"></i> Dhaka, Bangladesh</p>
+      </div>
+
+      <div class="box">
+         <h3>follow us</h3>
+         <a href="#"><i class="fab fa-facebook-f"></i> facebook</a>
+         <a href="#"><i class="fab fa-twitter"></i> twitter</a>
+         <a href="#"><i class="fab fa-instagram"></i> instagram</a>
+         <a href="#"><i class="fab fa-linkedin"></i> linkedin</a>
+      </div>
+
+   </div>
+
+   <div class="credit" style="text-align: center; padding: 2rem;">
+      &copy; <?= date('Y') ?> <span> Admin Panel</span> | All rights reserved.
+   </div>
+</footer>
+<!-- ===== FOOTER END ===== -->
+
+<script src="js/script.js"></script>
+</body>
+</html>
