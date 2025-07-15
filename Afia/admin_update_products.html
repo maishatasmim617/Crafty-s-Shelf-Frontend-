@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Update Product</title>
+
+   <!-- Font Awesome CDN -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+   <!-- Custom CSS -->
+   <link rel="stylesheet" href="css/admin_style.css">
+
+<style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      margin: 0;
+      padding-bottom: 80px;
+    }
+
+    /* Header */
+    .navbar {
+      background-color: white;
+      padding: 15px 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .logo span {
+      color: seagreen;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      font-size: 16px;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: seagreen;
+    }
+
+    .user-icon {
+      font-size: 22px;
+      color: #333;
+    }
+
+    /* Title */
+    .title {
+      margin-top: 20px;
+      text-align: center;
+      font-size: 28px;
+      text-transform: uppercase;
+      color: #333;
+    }
+    </style>
+
+</head>
+<body>
+    <!-- Header -->
+  <header class="navbar">
+    <div class="logo">Admin<span>Panel</span></div>
+    <nav class="nav-links">
+      <a href="#">Home</a>
+      <a href="#">Products</a>
+      <a href="#">Orders</a>
+      <a href="#">Users</a>
+      <a href="#">Contacts</a>
+    </nav>
+    <div class="user-icon"><i class="fas fa-user-circle"></i></div>
+  </header>
+
+<!-- Optional: Include admin header -->
+<?php include 'admin_header.php'; ?>
+
+<section class="update-product">
+   <h1 class="title">Update Product</h1>
+
+   <!-- Example form with prefilled sample data -->
+   <form action="" method="post" enctype="multipart/form-data">
+      <input type="hidden" name="old_image" value="example.jpg">
+      <input type="hidden" name="pid" value="1">
+      
+      <img src="ear ring 2.png" alt="Product Image" style="max-width:200px;">
+      
+      <input type="text" name="name" placeholder="Enter product name" required class="box" value="Sample Product">
+      
+      <input type="number" name="price" min="0" placeholder="Enter product price" required class="box" value="20">
+      
+      <select name="category" class="box" required>
+         <option selected>Ear ring</option>
+         <option value="saree">saree</option>
+         <option value="jewellery">jewellery</option>
+         <option value="bag">bag</option>
+         <option value="pottery">pottery</option>
+      </select>
+      
+      <textarea name="details" required placeholder="Enter product details" class="box" cols="30" rows="10">A statement of elegance and artistry, this handmade choker is crafted with care and intention. Each detail reflects skilled craftsmanship—delicate, bold, and uniquely yours. Whether worn for tradition or style, it tells a story of beauty shaped by hand.</textarea>
+      
+      <input type="file" name="image" class="box" accept="image/jpg, image/jpeg, image/png">
+      
+      <div class="flex-btn">
+         <input type="submit" class="btn" value="Update Product" name="update_product">
+         <a href="admin_products.php" class="option-btn">Go Back</a>
+      </div>
+   </form>
+
+</section>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>
