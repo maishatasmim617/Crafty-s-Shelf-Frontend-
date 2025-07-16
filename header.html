@@ -3,7 +3,7 @@
 <head>
    <meta charset="UTF-8" />
    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-   <title>CraftNest Header</title>
+   <title>Crafty's Shelf Header</title>
 
    <!-- Link to your CSS file -->
    <link rel="stylesheet" href="css/style.css" />
@@ -23,32 +23,44 @@
 
    <div class="flex">
 
-      <a href="admin_page.php" class="logo">CraftNest</a>
+      <a href="admin_page.html" class="logo">Crafty's Shelf</a>
 
       <nav class="navbar">
-         <a href="home.php">home</a>
-         <a href="shop.php">shop</a>
-         <a href="orders.php">orders</a>
-         <a href="about.php">about</a>
-         <a href="contact.php">contact</a>
+         <a href="home.html">home</a>
+         <a href="shop.html">shop</a>
+         <a href="orders.html">orders</a>
+         <a href="about.html">about</a>
+         <a href="contact.html">contact</a>
       </nav>
 
       <div class="icons">
          <div id="menu-btn" class="fas fa-bars"></div>
          <div id="user-btn" class="fas fa-user"></div>
-         <a href="search_page.php" class="fas fa-search"></a>
-         <a href="wishlist.php"><i class="fas fa-heart"></i><span>(X)</span></a>
-         <a href="cart.php"><i class="fas fa-shopping-cart"></i><span>(Y)</span></a>
+         <a href="search_page.html" class="fas fa-search"></a>
+         <a href="wishlist.html"><i class="fas fa-heart"></i><span id="wishlist-count">(0)</span></a>
+         <a href="cart.html"><i class="fas fa-shopping-cart"></i><span id="cart-count">(0)</span></a>
+
+         <div class="profile">
+         <img src="images/user.webp" alt="Profile Image" />
+         <p>User Name</p>
+         <!-- Updated update profile link -->
+         <a href="user_profile_update.html" class="btn" target="_blank" rel="noopener noreferrer">update profile</a>
+         <a href="logout.html" class="delete-btn">logout</a>
+         <div class="flex-btn">
+            <a href="login.html" class="option-btn">login</a>
+            <a href="register.html" class="option-btn">register</a>
+         </div>
+         
       </div>
 
       <div class="profile">
          <img src="images/profile.jpeg" alt="">
          <p>PROFILE_NAME</p>
-         <a href="user_profile_update.php" class="btn">update profile</a>
-         <a href="logout.php" class="delete-btn">logout</a>
+         <a href="user_profile_update.html" class="btn">update profile</a>
+         <a href="logout.html" class="delete-btn">logout</a>
          <div class="flex-btn">
-            <a href="login.php" class="option-btn">login</a>
-            <a href="register.php" class="option-btn">register</a>
+            <a href="login.html" class="option-btn">login</a>
+            <a href="register.html" class="option-btn">register</a>
          </div>
       </div>
 
@@ -56,5 +68,6 @@
 
 </header>
 
+<script src="js/script.js"></script>
 </body>
 </html>
