@@ -360,15 +360,6 @@ section{
 
 
 
-
-
-
-
-
-
-
-
-
 .footer{
    background-color: var(--white);
 }
@@ -420,7 +411,6 @@ section{
 .footer .credit span{
    color:var(--green);
 }
-
 
 
 /* media queries  */
