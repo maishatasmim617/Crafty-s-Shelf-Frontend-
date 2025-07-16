@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8" />
+   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <title>Home Page - Artisan Handcrafted</title>
+
+   <!-- Font Awesome -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+
+   <!-- Custom CSS -->
+   <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<?php include 'header.php'; ?>
+
+<div class="home-bg">
+   <section class="home">
+      <div class="content">
+         <span>crafting with love and tradition</span>
+         <h3>Discover Authentic Artisan Handcrafted Treasures</h3>
+         <p>Explore unique handmade items that tell a story of culture and creativity.</p>
+         <a href="about.php" class="btn">about us</a>
+      </div>
+   </section>
+</div>
+
+<section class="home-category">
+   <h1 class="title">shop by artisan category</h1>
+   <div class="box-container">
+      <div class="box">
+         <img src="images/bag.jpg" alt="Handcrafted Bags" />
+         <h3>bag</h3>
+         <p>Beautiful handcrafted bags made with traditional techniques.</p>
+         <a href="category.php?category=bag" class="btn">bag</a>
+      </div>
+
+      <div class="box">
+         <img src="images/Jewellery.jpg" alt="Handmade Jewelry" />
+         <h3>jewelry</h3>
+         <p>Unique artisan jewelry crafted with passion and care.</p>
+         <a href="category.php?category=jewelry" class="btn">jewelry</a>
+      </div>
+
+      <div class="box">
+         <img src="images/sari.jpg" alt="Traditional Sari" />
+         <h3>sari</h3>
+         <p>Elegant saris woven with rich cultural heritage.</p>
+         <a href="category.php?category=sari" class="btn">sari</a>
+      </div>
+
+      <div class="box">
+         <img src="images/poeetry.jpg" alt="Pottery" />
+         <h3>pottery</h3>
+         <p>Handmade pottery pieces for decor and use.</p>
+         <a href="category.php?category=pottery" class="btn">pottery</a>
+      </div>
+
+      <div class="box">
+         <img src="images/doll.jpg" alt="Handcrafted Dolls" />
+         <h3>doll</h3>
+         <p>Beautiful handcrafted dolls representing local culture.</p>
+         <a href="category.php?category=doll" class="btn">doll</a>
+      </div>
+      
+      <!-- Added categories -->
+      <div class="box">
+         <img src="images/Bengals.jpg" alt="Bengal Crafts" />
+         <h3>bengals</h3>
+         <p>Exquisite Bengal crafts showcasing regional artistry.</p>
+         <a href="category.php?category=bengals" class="btn">bengals</a>
+      </div>
+
+      <div class="box">
+         <img src="images/painting.jpg" alt="Traditional Paintings" />
+         <h3>painting</h3>
+         <p>Stunning traditional paintings reflecting rich cultural heritage.</p>
+         <a href="category.php?category=painting" class="btn">painting</a>
+      </div>
+   </div>
+</section>
+
+<section class="products">
+   <h1 class="title">latest products</h1>
+   <div class="box-container">
+
+   <?php if ($latest_products): ?>
+      <?php foreach ($latest_products as $product): ?>
+         <form action="" class="box" method="POST">
+            <div class="price">$<span><?= $product['price']; ?></span>/-</div>
+            <a href="view_page.php?pid=<?= $product['id']; ?>" class="fas fa-eye"></a>
+            <img src="uploaded_img/<?= $product['image']; ?>" alt="<?= htmlspecialchars($product['name']); ?>" />
+            <div class="name"><?= htmlspecialchars($product['name']); ?></div>
+            <input type="hidden" name="pid" value="<?= $product['id']; ?>">
+            <input type="hidden" name="p_name" value="<?= htmlspecialchars($product['name']); ?>">
+            <input type="hidden" name="p_price" value="<?= $product['price']; ?>">
+            <input type="hidden" name="p_image" value="<?= $product['image']; ?>">
+            <input type="number" min="1" value="1" name="p_qty" class="qty" />
+            <input type="submit" value="add to wishlist" class="option-btn" name="add_to_wishlist" />
+            <input type="submit" value="add to cart" class="btn" name="add_to_cart" />
+         </form>
+      <?php endforeach; ?>
+   <?php else: ?>
+      <p class="empty">no products added yet!</p>
+   <?php endif; ?>
+
+   </div>
+</section>
+
+<?php include 'footer.php'; ?>
+<script src="js/script.js"></script>
+</body>
+</html>

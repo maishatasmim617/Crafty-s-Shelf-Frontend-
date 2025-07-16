@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8" />
+   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <title>Category</title>
+
+   <!-- Font Awesome CDN -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+
+   <!-- Custom CSS -->
+   <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+   <!-- Header Include (replace with actual header or include in PHP) -->
+   <header>
+      <!-- Navigation and logo etc. -->
+      <h2>Site Header</h2>
+   </header>
+
+   <section class="products">
+
+      <h1 class="title">products categories</h1>
+
+      <div class="box-container">
+
+         <!-- Product box example, repeat as needed -->
+         <form action="#" class="box" method="POST">
+            <div class="price">$<span>99.99</span>/-</div>
+            <a href="view_page.html" class="fas fa-eye"></a>
+            <img src="images/poeetry.jpg" alt="Sample Product" />
+            <div class="name">Sample Product Name</div>
+
+            <!-- Hidden inputs for product info -->
+            <input type="hidden" name="pid" value="1" />
+            <input type="hidden" name="p_name" value="Sample Product Name" />
+            <input type="hidden" name="p_price" value="99.99" />
+            <input type="hidden" name="p_image" value="sample-product.jpg" />
+
+            <!-- Quantity -->
+            <input type="number" min="1" value="1" name="p_qty" class="qty" />
+
+            <!-- Buttons -->
+            <input type="submit" value="add to wishlist" class="option-btn" name="add_to_wishlist" />
+            <input type="submit" value="add to cart" class="btn" name="add_to_cart" />
+         </form>
+
+         <!-- Repeat the above product box for more products -->
+
+         <!-- If no products, show this message -->
+         <!-- <p class="empty">no products available!</p> -->
+
+      </div>
+
+   </section>
+
+   <!-- Footer Include (replace with actual footer or include in PHP) -->
+   <footer>
+      <p>Footer content here</p>
+   </footer>
+
+   <script src="js/script.js"></script>
+</body>
+</html>
