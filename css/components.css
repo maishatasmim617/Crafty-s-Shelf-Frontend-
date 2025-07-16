@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600&display=swap');
-
 :root{
    --green:#27ae60;
    --orange:#f39c12;
@@ -41,7 +40,6 @@
 
 body{
    background-color: var(--light-bg);
-   /* padding-bottom: 6.5rem; */
 }
 
 html{
@@ -358,8 +356,6 @@ section{
 }
 
 
-
-
 .footer{
    background-color: var(--white);
 }
@@ -412,9 +408,6 @@ section{
    color:var(--green);
 }
 
-
-/* media queries  */
-
 @media (max-width:991px){
 
    html{
@@ -458,7 +451,6 @@ section{
    }
 
 }
-
 @media (max-width:450px){
 
    html{

@@ -14,7 +14,6 @@
    background-color: var(--white);
    border-radius: .5rem;
 }
-
 .dashboard .box-container .box h3{
    font-size: 3.5rem;
    color:var(--black);
@@ -262,8 +261,6 @@
    }
 
 }
-
-
 
 @media (max-width:450px){
 
