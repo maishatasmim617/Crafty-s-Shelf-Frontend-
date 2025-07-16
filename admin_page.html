@@ -12,59 +12,88 @@
 </head>
 <body>
 
+<!-- ===== HEADER START ===== -->
 <header class="header">
-   <!-- Your header content here -->
+   <div class="flex">
+      <a href="admin_page.php" class="logo">Admin<span>Panel</span></a>
+
+      <nav class="navbar">
+         <a href="admin_page.html">home</a>
+         <a href="shop.html">shop</a>
+         <a href="admin_orders.html">orders</a>
+         <a href="about.html">about</a>
+         <a href="contact.html">messages</a>
+      </nav>
+
+      <div class="icons">
+         <div id="menu-btn" class="fas fa-bars"></div>
+         <div id="user-btn" class="fas fa-user"></div>
+      </div>
+
+      <div class="profile">
+         <img src="images/profile.jpeg" alt="Profile Image" />
+         <p>Admin Name</p>
+         <!-- Updated update profile link -->
+         <a href="admin_update_profile.html" class="btn" target="_blank" rel="noopener noreferrer">update profile</a>
+         <a href="logout.html" class="delete-btn">logout</a>
+         <div class="flex-btn">
+            <a href="login.html" class="option-btn">login</a>
+            <a href="register.html" class="option-btn">register</a>
+         </div>
+      </div>
+   </div>
 </header>
+<!-- ===== HEADER END ===== -->
 
 <section class="dashboard">
    <h1 class="title">Dashboard</h1>
 
    <div class="box-container">
       <div class="box">
-         <h3 id="totalPendings">$0.00/-</h3>
          <p>Total Pendings</p>
+         <h3 id="totalPendings">0</h3>
          <a href="admin_orders.html" class="btn">See Orders</a>
       </div>
 
       <div class="box">
-         <h3 id="totalCompleted">$0.00/-</h3>
          <p>Completed Orders</p>
+         <h3 id="totalCompleted">0</h3>
          <a href="admin_orders.html" class="btn">See Orders</a>
       </div>
 
       <div class="box">
-         <h3 id="ordersPlaced">0</h3>
          <p>Orders Placed</p>
+         <h3 id="ordersPlaced">0</h3>
          <a href="admin_orders.html" class="btn">See Orders</a>
       </div>
 
       <div class="box">
-         <h3 id="productsAdded">0</h3>
          <p>Products Added</p>
+         <h3 id="productsAdded">4</h3>
          <a href="admin_products.html" class="btn">See Products</a>
       </div>
 
       <div class="box">
-         <h3 id="totalUsers">0</h3>
          <p>Total Users</p>
+         <h3 id="totalUsers">0</h3>
          <a href="admin_users.html" class="btn">See Accounts</a>
       </div>
 
       <div class="box">
-         <h3 id="totalAdmins">0</h3>
          <p>Total Admins</p>
+         <h3 id="totalAdmins">1</h3>
          <a href="admin_users.html" class="btn">See Accounts</a>
       </div>
 
       <div class="box">
-         <h3 id="totalAccounts">0</h3>
          <p>Total Accounts</p>
+         <h3 id="totalAccounts">0</h3>
          <a href="admin_users.html" class="btn">See Accounts</a>
       </div>
 
       <div class="box">
-         <h3 id="totalMessages">0</h3>
          <p>Total Messages</p>
+         <h3 id="totalMessages">1</h3>
          <a href="admin_contacts.html" class="btn">See Messages</a>
       </div>
    </div>
@@ -93,6 +122,54 @@
   // Fetch data on page load
   fetchDashboardData();
 </script>
+
+<!-- ===== FOOTER START ===== -->
+<footer class="footer">
+   <section style="height: 1rem;"></section>
+   <div class="box-container" style="max-width: 1200px; margin: 0 auto; padding: 0 2rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr)); gap: 2rem;">
+
+      <div class="box">
+         <h3>quick links</h3>
+         <a href="admin_page.html"><i class="fas fa-angle-right"></i> home</a>
+         <a href="shop.html"><i class="fas fa-angle-right"></i> shop</a>
+         <a href="admin_orders.html"><i class="fas fa-angle-right"></i> orders</a>
+         <a href="about.html"><i class="fas fa-angle-right"></i> about</a>
+         <a href="contact.html"><i class="fas fa-angle-right"></i> contact</a>
+      </div>
+
+      <div class="box">
+         <h3>extra links</h3>
+         <a href="#"><i class="fas fa-angle-right"></i> privacy policy</a>
+         <a href="#"><i class="fas fa-angle-right"></i> terms of use</a>
+         <a href="#"><i class="fas fa-angle-right"></i> FAQs</a>
+         <a href="#"><i class="fas fa-angle-right"></i> help center</a>
+      </div>
+
+      <div class="box">
+         <h3>contact info</h3>
+         <p><i class="fas fa-phone"></i> +123-456-7890</p>
+         <p><i class="fas fa-envelope"></i> admin@example.com</p>
+         <p><i class="fas fa-map-marker-alt"></i> Dhaka, Bangladesh</p>
+      </div>
+
+      <div class="box">
+         <h3>follow us</h3>
+         <a href="#"><i class="fab fa-facebook-f"></i> facebook</a>
+         <a href="#"><i class="fab fa-twitter"></i> twitter</a>
+         <a href="#"><i class="fab fa-instagram"></i> instagram</a>
+         <a href="#"><i class="fab fa-linkedin"></i> linkedin</a>
+      </div>
+
+   </div>
+
+   <div class="credit" style="text-align: center; padding: 2rem;">
+      &copy; <?= date('Y') ?> <span> Admin Panel</span> | All rights reserved.
+   </div>
+</footer>
+<!-- ===== FOOTER END ===== -->
+
+
+<script src="js/script.js"></script>
 
 </body>
 </html>
