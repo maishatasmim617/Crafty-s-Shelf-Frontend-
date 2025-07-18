@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Admin Approvals</title>
+
+   <!-- font awesome cdn link -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+   <!-- custom css file link -->
+   <link rel="stylesheet" href="css/admin_style.css">
+</head>
+<body>
+
+<!-- Admin Header -->
+<header class="header">
+   <div class="flex">
+      <div class="logo">Admin <span>Panel</span></div>
+      <nav class="navbar">
+         <a href="admin_users.html">Dashboard</a>
+         <a href="admin_approve.html">Products</a>
+         <a href="#">Orders</a>
+         <a href="#">Users</a>
+         <a href="#">Approve Products</a>
+      </nav>
+   </div>
+</header>
+
+<!-- Approve Products Section -->
+<section class="show-products">
+   <h1 class="title">Approve or Deny Products</h1>
+
+   <div class="box-container">
+
+      <!-- Product Box Example -->
+      <div class="box">
+         <div class="price">1500Tk/-</div>
+         <img src="images/ear ring.jpg" alt="Product Image">
+         <div class="name">Handcrafted Earrings</div>
+         <div class="cat">Jewellery</div>
+         <div class="details">Beautiful handcrafted golden earrings.</div>
+         <div class="quantity">Quantity: 10</div>
+         <div class="flex-btn">
+            <a href="#" class="option-btn">Approve</a>
+            <a href="#" class="delete-btn" onclick="return confirm('Deny this product?');">Deny</a>
+         </div>
+      </div>
+
+      <!-- Duplicate this product box for more products -->
+      <div class="box">
+         <div class="price">750Tk/-</div>
+         <img src="images/sari.jpg" alt="Product Image">
+         <div class="name">Printed Cotton Saree</div>
+         <div class="cat">Saree</div>
+         <div class="details">Soft printed saree with vibrant colors.</div>
+         <div class="quantity">Quantity: 5</div>
+         <div class="flex-btn">
+            <a href="#" class="option-btn">Approve</a>
+            <a href="#" class="delete-btn" onclick="return confirm('Deny this product?');">Deny</a>
+         </div>
+      </div>
+      <div class="box">
+   <div class="price">1200Tk/-</div>
+   <img src="images/bag.jpg" alt="Product Image">
+   <div class="name">Handbag</div>
+   <div class="cat">Bag</div>
+   <div class="details">Elegant handbag suitable for all occasions.</div>
+   <div class="quantity">Quantity: 7</div>
+   <div class="flex-btn">
+      <a href="#" class="option-btn">Approve</a>
+      <a href="#" class="delete-btn" onclick="return confirm('Deny this product?');">Deny</a>
+   </div>
+</div>
+
+<div class="box">
+   <div class="price">450Tk/-</div>
+   <img src="images/Jewellery.jpg" alt="Product Image">
+   <div class="name">Jewellery Set</div>
+   <div class="cat">Jewellery</div>
+   <div class="details">Lightweight material and trendy jewellery set.</div>
+   <div class="quantity">Quantity: 20</div>
+   <div class="flex-btn">
+      <a href="#" class="option-btn">Approve</a>
+      <a href="#" class="delete-btn" onclick="return confirm('Deny this product?');">Deny</a>
+   </div>
+</div>
+
+<div class="box">
+   <div class="price">980Tk/-</div>
+   <img src="images/colorfull wallmate.jpg" alt="Product Image">
+   <div class="name">Wallmate</div>
+   <div class="cat">wall Decor</div>
+   <div class="details">Decor your home with handmade craft and make it more unique</div>
+   <div class="quantity">Quantity: 15</div>
+   <div class="flex-btn">
+      <a href="#" class="option-btn">Approve</a>
+      <a href="#" class="delete-btn" onclick="return confirm('Deny this product?');">Deny</a>
+   </div>
+</div>
+
+      <!-- Add more product approval boxes as needed -->
+
+   </div>
+</section>
+<div id="footer-placeholder"></div>
+
+<script src="js/script.js" defer></script>
+
+</body>
+</html>
