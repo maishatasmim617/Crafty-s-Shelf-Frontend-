@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8" />
+   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <title>Main Admin Dashboard</title>
+
+   <!-- Font Awesome -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+   <link rel="stylesheet" href="css/admin_style.css" />
+</head>
+<body>
+<div id="header-placeholder"></div>
+
+<section class="dashboard">
+   <h1 class="title">Main Admin Dashboard</h1>
+
+   <div class="box-container">
+
+      <div class="box">
+         <p>Total Accounts</p>
+         <h3 id="totalAccounts">0</h3>
+         <a href="admin_users.html" class="btn">See Accounts</a>
+      </div>
+
+      <div class="box">
+         <p>Total Users</p>
+         <h3 id="totalUsers">0</h3>
+         <a href="admin_users.html" class="btn">See Users</a>
+      </div>
+
+      <div class="box">
+         <p>Total Admins</p>
+         <h3 id="totalAdmins">0</h3>
+         <a href="admin_users.html" class="btn">See Admins</a>
+      </div>
+
+      <div class="box">
+         <p>Total Products Added</p>
+         <h3 id="productsAdded">0</h3>
+         <a href="admin_products.html" class="btn">See Products</a>
+      </div>
+
+      <div class="box">
+         <p>Total Approved Products</p>
+         <h3 id="approvedProducts">0</h3>
+         <a href="approved_products.html" class="btn">View Approved</a>
+      </div>
+
+      <div class="box">
+         <p>Total Orders Placed</p>
+         <h3 id="ordersPlaced">0</h3>
+         <a href="admin_orders.html" class="btn">See Orders</a>
+      </div>
+
+      <div class="box">
+         <p>Total Products Delivered</p>
+         <h3 id="productsDelivered">0</h3>
+         <a href="delivered_orders.html" class="btn">Delivered Orders</a>
+      </div>
+
+      <div class="box">
+         <p>Total Pending Orders</p>
+         <h3 id="pendingOrders">0</h3>
+         <a href="pending_orders.html" class="btn">Pending Orders</a>
+      </div>
+
+      <div class="box">
+         <p>Page Reviews</p>
+         <h3 id="pageReviews">0</h3>
+         <a href="page_reviews.html" class="btn">View Reviews</a>
+      </div>
+
+      <div class="box">
+         <p>Page Feedback</p>
+         <h3 id="pageFeedback">0</h3>
+         <a href="page_feedback.html" class="btn">View Feedback</a>
+      </div>
+
+      <div class="box">
+         <p>Messages from Sellers</p>
+         <h3 id="sellerMessages">0</h3>
+         <a href="seller_messages.html" class="btn">View Messages</a>
+      </div>
+
+   </div>
+</section>
+
+<script>
+  async function fetchMainAdminData() {
+    try {
+      const response = await fetch('main_admin_data.php');
+      if (!response.ok) throw new Error('Network response was not ok');
+      const data = await response.json();
+
+      document.getElementById('totalAccounts').textContent = data.total_accounts;
+      document.getElementById('totalUsers').textContent = data.total_users;
+      document.getElementById('totalAdmins').textContent = data.total_admins;
+      document.getElementById('productsAdded').textContent = data.total_products_added;
+      document.getElementById('approvedProducts').textContent = data.total_products_approved;
+      document.getElementById('ordersPlaced').textContent = data.total_orders_placed;
+      document.getElementById('productsDelivered').textContent = data.total_products_delivered;
+      document.getElementById('pendingOrders').textContent = data.total_pending_orders;
+      document.getElementById('pageReviews').textContent = data.page_reviews;
+      document.getElementById('pageFeedback').textContent = data.page_feedback;
+      document.getElementById('sellerMessages').textContent = data.seller_messages;
+
+    } catch (error) {
+      console.error('Failed to fetch main admin data:', error);
+    }
+  }
+
+  // Fetch data on page load
+  fetchMainAdminData();
+</script>
+
+<div id="footer-placeholder"></div>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>
