@@ -1,46 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <meta charset="UTF-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta charset="UTF-8" />
+   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
    <title>Messages</title>
 
    <!-- Font Awesome CDN -->
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
 
    <!-- Custom CSS -->
-   <link rel="stylesheet" href="css/admin_style.css">
+   <link rel="stylesheet" href="css/admin_style.css" />
 </head>
 <body>
 
    <!-- Admin Header Include -->
-   <!-- In the PHP version: <?php include 'admin_header.php'; ?> -->
-   <!-- In this static version, you can manually paste the HTML from admin_header.html if needed -->
+   <!-- PHP: <?php include 'admin_header.php'; ?> -->
+   <div id="header-placeholder"></div>
 
    <section class="messages">
-
       <h1 class="title">Messages</h1>
 
       <div class="box-container">
 
-         <!-- Sample message box (repeat for more) -->
-         <div class="box">
-            <p> user id : <span>1</span> </p>
-            <p> name : <span>John Doe</span> </p>
-            <p> number : <span>+880123456789</span> </p>
-            <p> email : <span>john@example.com</span> </p>
-            <p> message : <span>Hello, I have a question about my order.</span> </p>
-            <a href="#" onclick="return confirm('delete this message?');" class="delete-btn">delete</a>
-         </div>
+       <article class="box" data-id="1" aria-label="Message from John Doe">
+   <div class="content">
+      <p>User ID: <span>1</span></p>
+      <p>Name: <span>John Doe</span></p>
+      <p>Number: <span>+880123456789</span></p>
+      <p>Email: <span>john@example.com</span></p>
+      <p class="message-text">Message: <span>Hello, I have a question about my order. Please help me as soon as possible. It’s quite urgent.</span></p>
+   </div>
+   <a href="#" class="delete-btn" onclick="return confirm('Delete this message?');">Delete</a>
+</article>
 
-         <!-- If no messages -->
-         <!-- <p class="empty">you have no messages!</p> -->
+<article class="box" data-id="2" aria-label="Message from Sarah Khan">
+   <div class="content">
+      <p>User ID: <span>2</span></p>
+      <p>Name: <span>Sarah Khan</span></p>
+      <p>Number: <span>+8801987654321</span></p>
+      <p>Email: <span>sarah.k@example.com</span></p>
+      <p class="message-text">Message: <span>I would like to change the delivery address for my recent order. Kindly let me know the process.</span></p>
+   </div>
+   <a href="#" class="delete-btn" onclick="return confirm('Delete this message?');">Delete</a>
+</article>
+
+<article class="box" data-id="3" aria-label="Message from Rafiul Islam">
+   <div class="content">
+      <p>User ID: <span>3</span></p>
+      <p>Name: <span>Rafiul Islam</span></p>
+      <p>Number: <span>+8801678234567</span></p>
+      <p>Email: <span>rafiul99@example.com</span></p>
+      <p class="message-text">Message: <span>My package hasn’t arrived yet. It was supposed to be here 3 days ago. Please investigate this issue.</span></p>
+   </div>
+   <a href="#" class="delete-btn" onclick="return confirm('Delete this message?');">Delete</a>
+</article>
+
+<article class="box" data-id="4" aria-label="Message from Ayesha Sultana">
+   <div class="content">
+      <p>User ID: <span>4</span></p>
+      <p>Name: <span>Ayesha Sultana</span></p>
+      <p>Number: <span>+8801567123456</span></p>
+      <p>Email: <span>ayesha_s@example.com</span></p>
+      <p class="message-text">Message: <span>I was charged twice for the same product. Can I get a refund for the extra payment?</span></p>
+   </div>
+   <a href="#" class="delete-btn" onclick="return confirm('Delete this message?');">Delete</a>
+</article>
+
+<article class="box" data-id="5" aria-label="Message from Tanvir Ahmed">
+   <div class="content">
+      <p>User ID: <span>5</span></p>
+      <p>Name: <span>Tanvir Ahmed</span></p>
+      <p>Number: <span>+8801312345678</span></p>
+      <p>Email: <span>tanvir.a@example.com</span></p>
+      <p class="message-text">Message: <span>I want to cancel my order before it ships. Please confirm if that’s possible right now.</span></p>
+   </div>
+   <a href="#" class="delete-btn" onclick="return confirm('Delete this message?');">Delete</a>
+</article>
+
+<article class="box" data-id="6" aria-label="Message from Nusrat Jahan">
+   <div class="content">
+      <p>User ID: <span>6</span></p>
+      <p>Name: <span>Nusrat Jahan</span></p>
+      <p>Number: <span>+8801400123456</span></p>
+      <p>Email: <span>nusrat.j@example.com</span></p>
+      <p class="message-text">Message: <span>Your support team was very helpful! I just wanted to say thank you for resolving my issue so quickly.</span></p>
+   </div>
+   <a href="#" class="delete-btn" onclick="return confirm('Delete this message?');">Delete</a>
+</article>
+
+
+         <!-- Uncomment if no messages -->
+         <!-- <p class="empty">You have no messages!</p> -->
 
       </div>
-
    </section>
 
+   <!-- Footer Include -->
+   <div id="footer-placeholder"></div>
+
+   <!-- Custom Script -->
    <script src="js/script.js"></script>
 
 </body>
